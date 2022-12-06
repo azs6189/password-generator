@@ -24,7 +24,9 @@ body {
 }
 
 header {
+    margin-top: 50px;
     text-align: center;
+    font-size: larger;
     padding: 20px;
     padding-top: 0px;
     color: #c6a073;
@@ -41,6 +43,7 @@ h2 {
     color: hsl(206, 17%, 28%);
     font-size: 18px;
     margin: 0 auto;
+    margin-top: 75px;
     max-width: 800px;
     padding: 30px 40px;
 }
