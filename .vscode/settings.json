@@ -1,0 +1,6 @@
+{
+    "html.format.wrapAttributes": "auto",
+    "editor.wordWrapColumn": 150,
+    "prettier.proseWrap": "never",
+    "prettier.printWidth": 150
+}

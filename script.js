@@ -59,7 +59,6 @@ let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"];
 
 console.log("Welcome to the Password Generator!");
-let nr_letters = parseInt(
-	prompt("How many letters would you like in your password?")
-);
-console.log(nr_letters);
+let nr_letters = parseInt(prompt("How many letters would you like in your password?"));
+let nr_symbols = parseInt(prompt("How many symbols would you like?"));
+let nr_numbers = parseInt(prompt("How many numbers would you like?"));
