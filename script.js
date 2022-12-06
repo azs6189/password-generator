@@ -60,7 +60,13 @@ let symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"];
 
 console.log("Welcome to the Password Generator!");
 let nr_letters = parseInt(prompt("How many letters would you like in your password?"));
-let nr_symbols = parseInt(prompt("How many symbols would you like?"));
-let nr_numbers = parseInt(prompt("How many numbers would you like?"));
+// let nr_symbols = parseInt(prompt("How many symbols would you like?"));
+// let nr_numbers = parseInt(prompt("How many numbers would you like?"));
 
-password = []
+// empty array that will hold our random password
+password = [];
+
+for (let i = 0; i < nr_letters; i++) {
+	let letter = letters[Math.floor(Math.random() * letters.length)];
+	password.push(letter);
+}
