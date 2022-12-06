@@ -58,28 +58,37 @@ let letters = [
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"];
 
-console.log("Welcome to the Password Generator!");
-// let nr_letters = parseInt(prompt("How many letters would you like in your password?"));
-// let nr_symbols = parseInt(prompt("How many symbols would you like?"));
-// let nr_numbers = parseInt(prompt("How many numbers would you like?"));
+let button = document.querySelector("#generate");
 
 // empty array that will hold our random password
 password = [];
+function generatePassword() {
+	let nr_letters = parseInt(prompt("How many letters would you like in your password?"));
+	let nr_symbols = parseInt(prompt("How many symbols would you like?"));
+	let nr_numbers = parseInt(prompt("How many numbers would you like?"));
+	// iterates through letters array to gather random letters and append to password array
+	for (let i = 0; i < nr_letters; i++) {
+		let letter = letters[Math.floor(Math.random() * letters.length)];
+		password.push(letter);
+	}
 
-// iterates through letters array to gather random letters and append to password array
-for (let i = 0; i < nr_letters; i++) {
-	let letter = letters[Math.floor(Math.random() * letters.length)];
-	password.push(letter);
+	// iterates through symbols array to gather random symbols and append to password array
+	for (let i = 0; i < nr_symbols; i++) {
+		let symbol = symbols[Math.floor(Math.random() * symbols.length)];
+		password.push(symbol);
+	}
+
+	for (let i = 0; i < nr_numbers; i++) {
+		let number = numbers[Math.floor(Math.random() * numbers.length)];
+		password.push(number);
+	}
+	return password;
 }
 
-// iterates through symbols array to gather random symbols and append to password array
-for (let i = 0; i < nr_symbols; i++) {
-	let symbol = symbols[Math.floor(Math.random() * symbols.length)];
-	password.push(symbol);
+function writePassword() {
+	let finalPassword = generatePassword();
+	let passwordText = document.querySelector("#password");
+	passwordText.value = finalPassword;
 }
 
-for (let i = 0; i < nr_numbers; i++) {
-	let number = numbers[Math.floor(Math.random() * numbers.length)];
-	password.push(number);
-}
-console.log(password);
+button.addEventListener("click", writePassword);
