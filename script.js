@@ -63,7 +63,9 @@ let button = document.querySelector("#generate");
 // empty array that will hold our random password
 password = [];
 function generatePassword() {
-	let nr_letters = parseInt(prompt("How many letters would you like in your password?"));
+	let nr_letters = parseInt(
+		prompt("How many letters would you like in your password?")
+	);
 	let nr_symbols = parseInt(prompt("How many symbols would you like?"));
 	let nr_numbers = parseInt(prompt("How many numbers would you like?"));
 	// iterates through letters array to gather random letters and append to password array
@@ -82,7 +84,10 @@ function generatePassword() {
 		let number = numbers[Math.floor(Math.random() * numbers.length)];
 		password.push(number);
 	}
-	return password;
+
+	password.sort(() => Math.random() - 0.5);
+	console.log(password.join(""));
+	return password.join("");
 }
 
 function writePassword() {
