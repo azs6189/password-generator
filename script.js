@@ -104,5 +104,8 @@ function copyPassword() {
 	alert("Password copied to clipboard!");
 }
 
+// Click the Generate Password button to begin generating random password
 generateButton.addEventListener("click", writePassword);
+
+// Click the Copy to Clipboard button to copy your password
 copyButton.addEventListener("click", copyPassword);
